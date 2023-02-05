@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomClockSetupActivity"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnDone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnPreview"
+        app:cardCornerRadius="25dp"
+        android:backgroundTint="@color/black"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="25dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textColor="#D9F1EE"
+            android:padding="13dp"
+            />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnPreview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnDone"
+        app:cardCornerRadius="25dp"
+        android:backgroundTint="@color/black"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preview"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColor="#D9F1EE"
+            android:padding="13dp"
+            />
+    </com.google.android.material.card.MaterialCardView>
+    
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnDone"
+        android:padding="13dp"
+        android:text="Type your name :"
+        android:textSize="13dp"
+        android:layout_marginTop="25dp"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/tvName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvName"
+        app:layout_constraintBottom_toBottomOf="@id/tvName"
+        android:layout_marginEnd="13dp"
+        app:cardCornerRadius="25dp"
+        android:backgroundTint="#D9F1EE"
+        android:nextFocusDown="@id/etName"
+        >
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:hint="Enter your name..."
+            android:textStyle="bold"
+            android:textSize="19dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:focusable="true"
+            android:background="@android:color/transparent"
+            />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvClockType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toTopOf="@id/chipAnalogue"
+        app:layout_constraintBottom_toBottomOf="@id/chipDigital"
+        android:padding="13dp"
+        android:text="Choose Clock Type :"
+        />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipAnalogue"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="@id/cvName"
+        app:layout_constraintStart_toStartOf="@id/cvName"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        android:layout_marginTop="15dp"
+        android:text="Analogue Clock"
+        android:textColor="@color/teal_700"
+        android:padding="25dp"
+        />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipDigital"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/chipAnalogue"
+        app:layout_constraintStart_toStartOf="@id/chipAnalogue"
+        app:layout_constraintTop_toBottomOf="@id/chipAnalogue"
+        android:layout_marginTop="5dp"
+        android:text="Digital Clock"
+        android:textColor="@color/teal_700"
+        android:padding="25dp"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/tvTextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toTopOf="@id/cvColor"
+        app:layout_constraintBottom_toBottomOf="@id/cvColor"
+        android:padding="13dp"
+        android:text="Text Color :"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvColor"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="@id/chipDigital"
+        app:layout_constraintEnd_toEndOf="@id/chipDigital"
+        app:layout_constraintTop_toBottomOf="@id/chipDigital"
+        android:layout_marginTop="25dp"
+        app:cardCornerRadius="25dp"
+        />
+
+    <TextView
+        android:id="@+id/tvFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toTopOf="@id/cvFont"
+        app:layout_constraintBottom_toBottomOf="@id/cvFont"
+        android:padding="13dp"
+        android:text="Font :"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:id="@+id/cvFont"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="@id/chipDigital"
+            app:layout_constraintEnd_toEndOf="@id/chipDigital"
+            app:layout_constraintTop_toBottomOf="@id/cvColor"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="25dp"
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/filled_exposed_dropdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:textSize="15dp"
+            tools:text="test"
+            android:background="@android:color/transparent"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvBgClr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toTopOf="@id/cvBgColor"
+        app:layout_constraintBottom_toBottomOf="@id/cvBgColor"
+        android:padding="13dp"
+        android:text="Background\nColor :"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvBgColor"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="@id/chipDigital"
+        app:layout_constraintEnd_toEndOf="@id/chipDigital"
+        app:layout_constraintTop_toBottomOf="@id/cvFont"
+        android:layout_marginTop="25dp"
+        app:cardCornerRadius="25dp"
+        />
+
+    <TextView
+        android:id="@+id/tvDateTimeClr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toTopOf="@id/cvDt"
+        app:layout_constraintBottom_toBottomOf="@id/cvDt"
+        android:padding="13dp"
+        android:text="Time \&amp; Date\nColor :"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvDt"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="@id/chipDigital"
+        app:layout_constraintEnd_toEndOf="@id/chipDigital"
+        app:layout_constraintTop_toBottomOf="@id/cvBgColor"
+        android:layout_marginTop="25dp"
+        app:cardCornerRadius="25dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
