@@ -1,12 +1,11 @@
 package com.salman.customclockv2
 
-//import com.github.dhaval2404.colorpicker.ColorPickerDialog
-//import com.github.dhaval2404.colorpicker.model.ColorShape
-
 import android.R
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.chip.Chip
 import com.salman.customclockv2.databinding.ActivityCustomClockSetupBinding
@@ -22,9 +21,15 @@ class CustomClockSetupActivity : AppCompatActivity() {
     private var clr : Int? = null
     private var bgColor : Int? = null
     private var dateTimeClr : Int? = null
-//    private var clrPkr : ColorPickerDialog.Builder? =null
     private var clrFor = ""
     private lateinit var prefMgr : PrefMgr
+    private val clockTypeSelection = registerForActivityResult(ActivityResultContracts.StartActivityForResult())
+         { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            // Handle the result here
+        }
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,12 +44,14 @@ class CustomClockSetupActivity : AppCompatActivity() {
             (it as Chip).setTextColor(resources.getColor(R.color.black))
             binding.chipAnalogue.setTextColor(resources.getColor(com.salman.customclockv2.R.color.teal_200))
             clockTypeAnalogue = false
+            clockTypeSelection.launch(Intent(this, ClockSelectionActivity::class.java).putExtra("Analogue", false))
         }
 
         binding.chipAnalogue.setOnClickListener {
             (it as Chip).setTextColor(resources.getColor(R.color.black))
             binding.chipDigital.setTextColor(resources.getColor(com.salman.customclockv2.R.color.teal_200))
             clockTypeAnalogue = true
+            clockTypeSelection.launch(Intent(this, ClockSelectionActivity::class.java).putExtra("Analogue", true))
         }
 
         setUpColorPickerViews()

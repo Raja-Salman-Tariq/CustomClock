@@ -115,7 +115,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvName"
         android:layout_marginTop="15dp"
         android:text="Analogue Clock"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/teal_200"
         android:padding="25dp"
         />
 
@@ -128,7 +128,7 @@
         app:layout_constraintTop_toBottomOf="@id/chipAnalogue"
         android:layout_marginTop="5dp"
         android:text="Digital Clock"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/teal_200"
         android:padding="25dp"
         android:textAlignment="center"
         />
